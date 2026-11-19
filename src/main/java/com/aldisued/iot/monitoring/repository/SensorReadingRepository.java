@@ -18,7 +18,6 @@ public interface SensorReadingRepository extends JpaRepository<SensorReading, Lo
             @Param("to") LocalDateTime to
     );
 
-    // New method for Task 8
     @Query("SELECT sr.value FROM SensorReading sr WHERE sr.sensor.type = :type AND sr.timestamp BETWEEN :from AND :to ORDER BY sr.timestamp ASC")
     List<Double> findValuesBySensorTypeAndTimestampBetweenOrderByTimestampAsc(
             @Param("type") SensorType type,
