@@ -21,7 +21,7 @@ public class MeasurementCalculatorService {
             .average()
             .orElse(0.0);
 
-    double margin = deviation * Math.abs(average);
+    double margin = deviation * Math.abs(average);  // Math.abs - prepare for minus values like temp
     double lowerBound = average - margin;
     double upperBound = average + margin;
 
